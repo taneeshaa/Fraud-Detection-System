@@ -9,3 +9,4 @@ public record PaymentRequest(
         @NotBlank String userId,
         @Positive BigDecimal amount
 ) {}
+
