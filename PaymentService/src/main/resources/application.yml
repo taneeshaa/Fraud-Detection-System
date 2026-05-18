@@ -14,7 +14,7 @@ spring:
       host: ${REDIS_HOST}
       port: ${REDIS_PORT}
   security:
-    oath2:
+    oauth2:
          resourceserver:
             jwt:
               issuer-uri: ${AZURE_AD_ISSUER_URI}
