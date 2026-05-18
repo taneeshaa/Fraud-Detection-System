@@ -43,22 +43,6 @@ public class PaymentService {
                                                     .subscribeOn(Schedulers.boundedElastic());
                                         })
                 );
-//        Transaction savedTxn = repository.save(txn);
-//
-//        // Check fraud status
-//        FraudResult result = fraudWebClient.get()
-//                .uri(uriBuilder -> uriBuilder
-//                        .path("/fraud-check")
-//                        .queryParam("userId", request.userId())
-//                        .queryParam("amount", request.amount())
-//                        .build())
-//                .retrieve()
-//                .bodyToMono(FraudResult.class)
-//                .block();
-//
-//        // Update transaction with fraud check result
-//        savedTxn.setStatus(result.status());
-//        return repository.save(savedTxn);
     }
 }
 
