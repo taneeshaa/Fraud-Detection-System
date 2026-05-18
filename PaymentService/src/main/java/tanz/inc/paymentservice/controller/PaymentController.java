@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.reactive.function.client.WebClient;
 import tanz.inc.paymentservice.dto.FraudResult;
@@ -22,6 +23,7 @@ public class PaymentController {
     private final WebClient fraudWebClient;
 
     @PostMapping
+    @PreAuthorize("hasAuthority('APPROLE_Payment.Create')")
     public ResponseEntity<Transaction> createPayment(@Valid @RequestBody PaymentRequest request) {
         Transaction txn = new Transaction();
         txn.setUserId(request.userId());
